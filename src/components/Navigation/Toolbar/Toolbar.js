@@ -26,6 +26,9 @@ const Toolbar = () => {
                     <NavItem className='mr-5'>
                         <NavLink tag={RouterNavLink} to="/contacts" >Contacts</NavLink>
                     </NavItem>
+                    <NavItem className='mr-5'>
+                        <NavLink tag={RouterNavLink} to="/admin" >Admin</NavLink>
+                    </NavItem>
                 </Nav>
             </Navbar>
         </header>
