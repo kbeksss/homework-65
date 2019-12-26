@@ -15,16 +15,16 @@ const Toolbar = () => {
     return (
         <header className='Toolbar'>
             <Navbar color="light" light expand="md">
-                <NavbarBrand tag={RouterNavLink} to='/home' exact>Lorem Web-page</NavbarBrand>
+                <NavbarBrand tag={RouterNavLink} to='/pages/home' exact>Lorem Web-page</NavbarBrand>
                 <Nav className="ml-auto" navbar pills>
                     <NavItem className='mr-5'>
-                        <NavLink tag={RouterNavLink} to='/home' exact>Home</NavLink>
+                        <NavLink tag={RouterNavLink} to='/pages/home' exact>Home</NavLink>
                     </NavItem>
                     <NavItem className='mr-5'>
-                        <NavLink tag={RouterNavLink} to="/about">About</NavLink>
+                        <NavLink tag={RouterNavLink} to="/pages/about">About</NavLink>
                     </NavItem>
                     <NavItem className='mr-5'>
-                        <NavLink tag={RouterNavLink} to="/contacts" >Contacts</NavLink>
+                        <NavLink tag={RouterNavLink} to="/pages/contacts" >Contacts</NavLink>
                     </NavItem>
                     <NavItem className='mr-5'>
                         <NavLink tag={RouterNavLink} to="/admin" >Admin</NavLink>
