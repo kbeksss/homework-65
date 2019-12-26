@@ -1,5 +1,4 @@
 import React from 'react';
-import './Toolbar.css';
 import {
     Navbar,
     NavbarBrand,
@@ -27,8 +26,12 @@ const Toolbar = () => {
                         <NavLink tag={RouterNavLink} to="/pages/contacts" >Contacts</NavLink>
                     </NavItem>
                     <NavItem className='mr-5'>
-                        <NavLink tag={RouterNavLink} to="/admin" >Admin</NavLink>
+                        <NavLink tag={RouterNavLink} to="/pages/address" >Our location</NavLink>
                     </NavItem>
+                    <NavItem className='mr-5'>
+                        <NavLink tag={RouterNavLink} to="/pages/admin" >Admin</NavLink>
+                    </NavItem>
+
                 </Nav>
             </Navbar>
         </header>

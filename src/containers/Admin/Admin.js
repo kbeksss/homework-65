@@ -20,7 +20,12 @@ class Admin extends Component {
                 description: this.state.description
             };
             let postData = await axiosAPI.put('pages/' + this.state.pageName + '.json', data);
-            postData.statusText === 'OK' ? alert('Changes are saved') : alert('Changes aren\'t saved');
+            if(postData.statusText === 'OK'){
+                alert('Changes are saved');
+                this.props.history.replace('/pages/' + this.state.pageName);
+            } else {
+                alert('Changes aren\'t saved');
+            }
         }
     };
     getData = async (name) => {
@@ -35,7 +40,6 @@ class Admin extends Component {
     componentDidMount = async () => {
         let response = await axiosAPI.get('pages.json');
         this.setState({pages: Object.keys(response.data)});
-        this.getData(this.state.pages[0]);
     };
 
     render() {

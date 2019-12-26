@@ -15,9 +15,8 @@ class Pages extends Component {
         }
     };
     componentDidMount() {
-        return this.getData('home');
+        return this.getData(this.props.match.params.name);
     }
-
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(prevProps.match.params.name !== this.props.match.params.name){
             return this.getData(this.props.match.params.name);
