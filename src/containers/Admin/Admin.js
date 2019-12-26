@@ -5,17 +5,23 @@ import axiosAPI from "../../axios-page";
 class Admin extends Component {
     state = {
         pageName: '',
-        title: 'aaa',
-        description: 'aa',
+        title: '',
+        description: '',
         pages: [],
     };
     changeValue = e => {
         this.setState({[e.target.name]: e.target.value} );
     };
-    submitForm = e => {
+    submitForm = async e => {
         e.preventDefault();
-
-        console.log('submit');
+        if(this.state.pageName){
+            let data = {
+                title: this.state.title,
+                description: this.state.description
+            };
+            let postData = await axiosAPI.put('pages/' + this.state.pageName + '.json', data);
+            postData.statusText === 'OK' ? alert('Changes are saved') : alert('Changes aren\'t saved');
+        }
     };
     getData = async (name) => {
         let response = await axiosAPI.get('pages/' + name + '.json');
@@ -28,8 +34,8 @@ class Admin extends Component {
     }
     componentDidMount = async () => {
         let response = await axiosAPI.get('pages.json');
-        console.log(response.data);
         this.setState({pages: Object.keys(response.data)});
+        this.getData(this.state.pages[0]);
     };
 
     render() {
